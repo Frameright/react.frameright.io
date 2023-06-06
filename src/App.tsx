@@ -3,6 +3,10 @@ import "./App.css";
 function App() {
   return (
     <>
+      <div className="featuredImage">
+        <img src="https://webc.frameright.io/assets/pics/skater.jpg" />
+      </div>
+
       <h1>Tutorial</h1>
 
       <p>
