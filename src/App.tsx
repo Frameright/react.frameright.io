@@ -1,10 +1,18 @@
+import React from "react";
+
 import { ImageDisplayControl } from "@frameright/react-image-display-control";
 
 import "./App.css";
 
-function App() {
+export default function App() {
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    return _monitorScrollEffect(ref, console.log);
+  }, []);
+
   return (
-    <>
+    <div ref={ref}>
       <div className="featuredImage" data-idc-parent>
         <ImageDisplayControl>
           <img src="https://webc.frameright.io/assets/pics/skater.jpg" />
@@ -269,8 +277,28 @@ function App() {
         ultricies mi eget mauris pharetra et ultrices neque. Vitae justo eget
         magna fermentum iaculis eu.
       </p>
-    </>
+    </div>
   );
 }
 
-export default App;
+function _monitorScrollEffect(
+  ref: React.RefObject<HTMLDivElement>,
+  callback: (scrollPosition: number) => void
+) {
+  if (ref.current) {
+    // See https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver
+    const observer = new IntersectionObserver(
+      () => {
+        callback(window.scrollY);
+      },
+      { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
+    );
+    for (const child of ref.current.children) {
+      observer.observe(child);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }
+}
