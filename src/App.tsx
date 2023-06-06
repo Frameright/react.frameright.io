@@ -8,19 +8,13 @@ export default function App() {
   const [featuredImageClasses, setFeaturedImageClasses] = React.useState(
     new Set(["featuredImage"])
   );
-  const ref = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    return _monitorScrollEffect(
-      ref,
-      _changeFeaturedImageClasses,
-      featuredImageClasses,
-      setFeaturedImageClasses
-    );
+    return _scrollEffect(featuredImageClasses, setFeaturedImageClasses);
   }, [featuredImageClasses, setFeaturedImageClasses]);
 
   return (
-    <div ref={ref}>
+    <>
       <div className={[...featuredImageClasses].join(" ")} data-idc-parent>
         <ImageDisplayControl>
           <img src="https://webc.frameright.io/assets/pics/skater.jpg" />
@@ -285,45 +279,26 @@ export default function App() {
         ultricies mi eget mauris pharetra et ultrices neque. Vitae justo eget
         magna fermentum iaculis eu.
       </p>
-    </div>
+    </>
   );
 }
 
-// Calls the callback each time the scroll position changes.
-function _monitorScrollEffect(
-  ref: React.RefObject<HTMLDivElement>,
-  callback: (scrollPosition: number, ...additionalArgs: unknown[]) => void,
-  ...additionalCallbackArgs: unknown[]
+// Changes the classes to be applied to the featured image based on the scroll
+// position.
+function _scrollEffect(
+  prevFeaturedImageClasses: Set<string>,
+  setFeaturedImageClasses: React.Dispatch<React.SetStateAction<Set<string>>>
 ) {
-  if (ref.current) {
-    // See https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver
-    const observer = new IntersectionObserver(
-      () => {
-        callback(window.scrollY, ...additionalCallbackArgs);
-      },
-      { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
-    );
-    for (const child of ref.current.children) {
-      observer.observe(child);
-    }
+  window.addEventListener("scroll", _onScroll);
+  _onScroll();
+  return () => {
+    window.removeEventListener("scroll", _onScroll);
+  };
 
-    return () => {
-      observer.disconnect();
-    };
-  }
-}
+  function _onScroll() {
+    const scrollPosition = window.scrollY;
 
-function _changeFeaturedImageClasses(
-  scrollPosition: number,
-  ...args: unknown[]
-) {
-  if (args.length >= 2) {
-    const oldFeaturedImageClasses = args[0] as Set<string>;
-    const setFeaturedImageClasses = args[1] as React.Dispatch<
-      React.SetStateAction<Set<string>>
-    >;
-
-    const newFeaturedImageClasses = new Set<string>(oldFeaturedImageClasses);
+    const newFeaturedImageClasses = new Set<string>(prevFeaturedImageClasses);
     if (scrollPosition < 100) {
       newFeaturedImageClasses.add("fullWidth");
       newFeaturedImageClasses.delete("leftSquare");
@@ -333,7 +308,7 @@ function _changeFeaturedImageClasses(
       newFeaturedImageClasses.delete("fullWidth");
     }
 
-    if (!_equals(oldFeaturedImageClasses, newFeaturedImageClasses)) {
+    if (!_equals(prevFeaturedImageClasses, newFeaturedImageClasses)) {
       setFeaturedImageClasses(newFeaturedImageClasses);
     }
   }
