@@ -5,17 +5,15 @@ import { ImageDisplayControl } from "@frameright/react-image-display-control";
 import "./App.css";
 
 export default function App() {
-  const [featuredImageClasses, setFeaturedImageClasses] = React.useState(
-    new Set(["featuredImage"])
-  );
+  const [featuredImageClass, setFeaturedImageClass] = React.useState("");
 
   React.useEffect(() => {
-    return _scrollEffect(featuredImageClasses, setFeaturedImageClasses);
-  }, [featuredImageClasses, setFeaturedImageClasses]);
+    return _scrollEffect(featuredImageClass, setFeaturedImageClass);
+  }, [featuredImageClass, setFeaturedImageClass]);
 
   return (
     <>
-      <div className={[...featuredImageClasses].join(" ")} data-idc-parent>
+      <div className={"featuredImage " + featuredImageClass} data-idc-parent>
         <ImageDisplayControl>
           <img src="https://webc.frameright.io/assets/pics/skater.jpg" />
         </ImageDisplayControl>
@@ -286,8 +284,8 @@ export default function App() {
 // Changes the classes to be applied to the featured image based on the scroll
 // position.
 function _scrollEffect(
-  prevFeaturedImageClasses: Set<string>,
-  setFeaturedImageClasses: React.Dispatch<React.SetStateAction<Set<string>>>
+  featuredImageClass: string,
+  setFeaturedImageClass: React.Dispatch<React.SetStateAction<string>>
 ) {
   window.addEventListener("scroll", _onScroll);
   _onScroll();
@@ -298,26 +296,12 @@ function _scrollEffect(
   function _onScroll() {
     const scrollPosition = window.scrollY;
 
-    const newFeaturedImageClasses = new Set<string>(prevFeaturedImageClasses);
     if (scrollPosition < 100) {
-      newFeaturedImageClasses.add("fullWidth");
-      newFeaturedImageClasses.delete("leftSquare");
+      featuredImageClass = "fullWidth";
     }
     if (scrollPosition > 250) {
-      newFeaturedImageClasses.add("leftSquare");
-      newFeaturedImageClasses.delete("fullWidth");
+      featuredImageClass = "leftSquare";
     }
-
-    if (!_equals(prevFeaturedImageClasses, newFeaturedImageClasses)) {
-      setFeaturedImageClasses(newFeaturedImageClasses);
-    }
+    setFeaturedImageClass(featuredImageClass);
   }
-}
-
-// See https://stackoverflow.com/questions/31128855/comparing-ecma6-sets-for-equality
-function _equals(firstSet: Set<string>, secondSet: Set<string>): boolean {
-  return (
-    firstSet.size === secondSet.size &&
-    [...firstSet].every((item) => secondSet.has(item))
-  );
 }
