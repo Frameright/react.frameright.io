@@ -15,7 +15,10 @@ export default function App() {
     <>
       <div className={"featuredImage " + featuredImageClass} data-idc-parent>
         <ImageDisplayControl>
-          <img src="https://webc.frameright.io/assets/pics/skater.jpg" />
+          <img
+            src="https://webc.frameright.io/assets/pics/skater.jpg"
+            data-avoid-no-region="off"
+          />
         </ImageDisplayControl>
       </div>
 
@@ -298,8 +301,7 @@ function _scrollEffect(
 
     if (scrollPosition < 100) {
       featuredImageClass = "fullWidth";
-    }
-    if (scrollPosition > 250) {
+    } else {
       featuredImageClass = "leftSquare";
     }
     setFeaturedImageClass(featuredImageClass);

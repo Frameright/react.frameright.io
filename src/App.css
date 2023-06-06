@@ -16,18 +16,16 @@ div.featuredImage > img {
 }
 
 div.featuredImage.fullWidth {
-  position: static;
-
   width: 100%;
-  aspect-ratio: 2;
+  height: 30vh;
 }
 
 div.featuredImage.leftSquare {
   position: sticky;
-  top: 50px;
-  margin-top: 200px;
-  margin-left: -250px;
+  top: 25px;
+  margin-top: calc(30vh - 150px);
+  height: 150px;
 
-  width: 200px;
-  aspect-ratio: 1;
+  margin-left: -175px;
+  width: 150px;
 }
