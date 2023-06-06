@@ -5,15 +5,23 @@ import { ImageDisplayControl } from "@frameright/react-image-display-control";
 import "./App.css";
 
 export default function App() {
+  const [featuredImageClasses, setFeaturedImageClasses] = React.useState(
+    new Set(["featuredImage"])
+  );
   const ref = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    return _monitorScrollEffect(ref, console.log);
-  }, []);
+    return _monitorScrollEffect(
+      ref,
+      _changeFeaturedImageClasses,
+      featuredImageClasses,
+      setFeaturedImageClasses
+    );
+  }, [featuredImageClasses, setFeaturedImageClasses]);
 
   return (
     <div ref={ref}>
-      <div className="featuredImage" data-idc-parent>
+      <div className={[...featuredImageClasses].join(" ")} data-idc-parent>
         <ImageDisplayControl>
           <img src="https://webc.frameright.io/assets/pics/skater.jpg" />
         </ImageDisplayControl>
@@ -281,15 +289,17 @@ export default function App() {
   );
 }
 
+// Calls the callback each time the scroll position changes.
 function _monitorScrollEffect(
   ref: React.RefObject<HTMLDivElement>,
-  callback: (scrollPosition: number) => void
+  callback: (scrollPosition: number, ...additionalArgs: unknown[]) => void,
+  ...additionalCallbackArgs: unknown[]
 ) {
   if (ref.current) {
     // See https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver
     const observer = new IntersectionObserver(
       () => {
-        callback(window.scrollY);
+        callback(window.scrollY, ...additionalCallbackArgs);
       },
       { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
     );
@@ -301,4 +311,38 @@ function _monitorScrollEffect(
       observer.disconnect();
     };
   }
+}
+
+function _changeFeaturedImageClasses(
+  scrollPosition: number,
+  ...args: unknown[]
+) {
+  if (args.length >= 2) {
+    const oldFeaturedImageClasses = args[0] as Set<string>;
+    const setFeaturedImageClasses = args[1] as React.Dispatch<
+      React.SetStateAction<Set<string>>
+    >;
+
+    const newFeaturedImageClasses = new Set<string>(oldFeaturedImageClasses);
+    if (scrollPosition < 100) {
+      newFeaturedImageClasses.add("fullWidth");
+      newFeaturedImageClasses.delete("leftSquare");
+    }
+    if (scrollPosition > 250) {
+      newFeaturedImageClasses.add("leftSquare");
+      newFeaturedImageClasses.delete("fullWidth");
+    }
+
+    if (!_equals(oldFeaturedImageClasses, newFeaturedImageClasses)) {
+      setFeaturedImageClasses(newFeaturedImageClasses);
+    }
+  }
+}
+
+// See https://stackoverflow.com/questions/31128855/comparing-ecma6-sets-for-equality
+function _equals(firstSet: Set<string>, secondSet: Set<string>): boolean {
+  return (
+    firstSet.size === secondSet.size &&
+    [...firstSet].every((item) => secondSet.has(item))
+  );
 }
