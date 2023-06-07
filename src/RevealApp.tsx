@@ -4,7 +4,7 @@ import Reveal from 'reveal.js';
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/dist/theme/white.css';
 
-import { ImageDisplayControl } from '@frameright/react-image-display-control';
+// TODO import { ImageDisplayControl } from '@frameright/react-image-display-control';
 
 import './RevealApp.css';
 
