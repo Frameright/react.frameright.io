@@ -1,12 +1,31 @@
-div.reveal {
+div.demo {
   width: 100vw;
   height: 100vh;
 
-  font-size: min(6vw, 7vh, 3em);
+  font-size: min(5vw, 5vh, 2em);
 }
 
+div.demo,
+.reveal {
+  color: #211d50;
+}
+
+span.topbar {
+  position: fixed;
+  top: 0.3em;
+  right: 0.3em;
+  z-index: 10;
+}
+
+img.logo {
+  width: 2em;
+  height: 2em;
+  margin: 0.3em;
+}
+
+div.reveal,
 section,
-div.slide,
+div.demoPart,
 div[data-idc-parent] > img {
   /* just follow the parent's size */
   box-sizing: border-box;
@@ -15,23 +34,39 @@ div[data-idc-parent] > img {
   max-width: 100%;
   max-height: 100%;
   margin: 0;
+
+  font-size: unset;
 }
 
-div.slide {
+div.demoPart {
   padding: 1em;
 }
 
-div.slide.first {
-  display: flex;
-  flex-wrap: wrap;
+pre.code-wrapper {
+  margin: 0;
+  width: unset;
 }
 
+pre.code-wrapper,
 div[data-idc-parent] {
   border-radius: 0.3em;
   overflow: hidden;
 }
 
-div[data-idc-parent].icon {
-  width: 3em;
-  height: 3em;
+div.demoPart.first {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+div.demoPart.first > div {
+  min-width: 16em;
+}
+
+div.demoPart.first > div[data-idc-parent] {
+  max-width: 40%;
+  max-height: 50vh;
+  margin: 1em;
+  aspect-ratio: 1.5;
 }

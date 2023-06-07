@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@frameright/react-image-display-control": "^0.0.1",
+    "highlight.js": "^11.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "reveal.js": "^4.5.0"
