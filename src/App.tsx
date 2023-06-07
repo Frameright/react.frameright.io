@@ -21,9 +21,9 @@ export function App() {
     if (revealInitialized) return;
     Reveal.initialize({
       plugins: [RevealHighlight],
-      controlsLayout: 'bottom-right',
-      controlsTutorial: false,
-      controlsBackArrows: 'hidden',
+      controlsLayout: 'edges',
+      controlsTutorial: true,
+      controlsBackArrows: 'faded',
       progress: true,
       mouseWheel: true,
       disableLayout: true,
@@ -33,7 +33,7 @@ export function App() {
   }, []);
 
   return (
-    <div className="demo">
+    <div className="app">
       <span className="topbar">
         <a href="https://frameright.io">
           <img
@@ -48,18 +48,19 @@ export function App() {
           />
         </a>
       </span>
-      <div className="reveal">
-        <div className="slides">
-          <section>
+      <div className="flexContainer">
+        <div className="reveal">
+          <div className="slides">
             <section>
-              <div className="demoPart first">
-                <div>
-                  <p>
-                    Leverage <b>Image Display Control</b> metadata in React
-                  </p>
-                  <pre>
-                    <code className="language-tsx">
-                      {`
+              <section>
+                <div className="appSlide">
+                  <div>
+                    <p>
+                      Leverage <b>Image Display Control</b> metadata in React
+                    </p>
+                    <pre>
+                      <code className="language-tsx">
+                        {`
 // npm i @frameright/react-image-display-control
 import {ImageDisplayControl} from
   "@frameright/react-image-display-control";
@@ -78,23 +79,31 @@ export function MyApp() {
   );
 }
 `.trim()}
-                    </code>
-                  </pre>
+                      </code>
+                    </pre>
+                  </div>
                 </div>
-                <div data-idc-parent>
-                  <ImageDisplayControl>
-                    <img
-                      src="https://webc.frameright.io/assets/pics/skater.jpg"
-                      data-avoid-no-region="off"
-                    />
-                  </ImageDisplayControl>
+              </section>
+              <section>
+                <div className="appSlide">
+                  <p>2nd slide</p>
                 </div>
-              </div>
+              </section>
+              <section>
+                <div className="appSlide">
+                  <p>3rd slide</p>
+                </div>
+              </section>
             </section>
-            <section>
-              <div className="demoPart">2nd slide</div>
-            </section>
-          </section>
+          </div>
+        </div>
+        <div data-idc-parent>
+          <ImageDisplayControl>
+            <img
+              src="https://webc.frameright.io/assets/pics/skater.jpg"
+              data-avoid-no-region="off"
+            />
+          </ImageDisplayControl>
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
-div.demo {
+div.app {
   width: 100vw;
   height: 100vh;
 
   font-size: min(5vw, 5vh, 2em);
 }
 
-div.demo,
+div.app,
 .reveal {
   color: #211d50;
 }
@@ -23,9 +23,15 @@ img.logo {
   margin: 0.3em;
 }
 
-div.reveal,
-section,
-div.demoPart,
+div.flexContainer {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  column-gap: 1em;
+}
+
+div.flexContainer,
 div[data-idc-parent] > img {
   /* just follow the parent's size */
   box-sizing: border-box;
@@ -34,12 +40,30 @@ div[data-idc-parent] > img {
   max-width: 100%;
   max-height: 100%;
   margin: 0;
+}
 
+div[data-idc-parent] {
+  aspect-ratio: 1.5;
+}
+
+div.reveal,
+div[data-idc-parent] {
+  width: 17em;
+}
+
+div.reveal {
   font-size: unset;
 }
 
-div.demoPart {
-  padding: 1em;
+div.reveal,
+div.appSlide {
+  height: 19em;
+}
+
+div.appSlide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 pre.code-wrapper {
@@ -53,20 +77,6 @@ div[data-idc-parent] {
   overflow: hidden;
 }
 
-div.demoPart.first {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-div.demoPart.first > div {
-  min-width: 16em;
-}
-
-div.demoPart.first > div[data-idc-parent] {
-  max-width: 40%;
-  max-height: 50vh;
-  margin: 1em;
-  aspect-ratio: 1.5;
+div[data-idc-parent] {
+  max-height: max(30vh, 30vw);
 }
