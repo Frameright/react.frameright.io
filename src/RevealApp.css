@@ -1,0 +1,37 @@
+div.reveal {
+  width: 100vw;
+  height: 100vh;
+
+  font-size: min(6vw, 7vh, 3em);
+}
+
+section,
+div.slide,
+div[data-idc-parent] > img {
+  /* just follow the parent's size */
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+}
+
+div.slide {
+  padding: 1em;
+}
+
+div.slide.first {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div[data-idc-parent] {
+  border-radius: 0.3em;
+  overflow: hidden;
+}
+
+div[data-idc-parent].icon {
+  width: 3em;
+  height: 3em;
+}
