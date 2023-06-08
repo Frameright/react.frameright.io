@@ -2,7 +2,7 @@ div.app {
   width: 100vw;
   height: 100vh;
 
-  font-size: min(5vw, 5vh, 2em);
+  font-size: min(5vw, 4vh, 2em);
 }
 
 div.app,
@@ -48,7 +48,7 @@ div[data-idc-parent] {
 
 div.reveal,
 div[data-idc-parent] {
-  width: 17em;
+  width: 18em;
 }
 
 div.reveal {
@@ -71,6 +71,10 @@ pre.code-wrapper {
   width: unset;
 }
 
+pre.code-wrapper > code {
+  max-height: unset;
+}
+
 pre.code-wrapper,
 div[data-idc-parent] {
   border-radius: 0.3em;
@@ -78,5 +82,5 @@ div[data-idc-parent] {
 }
 
 div[data-idc-parent] {
-  max-height: max(30vh, 30vw);
+  max-height: max(35vh, 28vw);
 }
