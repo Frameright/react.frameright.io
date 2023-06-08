@@ -87,7 +87,30 @@ export function MyApp() {
               </section>
               <section>
                 <div className="appSlide">
-                  <p>2nd slide</p>
+                  <div>
+                    <div className="appSlideText">
+                      Carelessly add size/ratio constraints
+                    </div>
+                    <pre>
+                      <code className="language-tsx">
+                        {`
+export function MyApp() {
+  // Will responsively zoom in on a meaningful
+  // region:
+  return (
+    <div style={{aspectRatio: 1 / 2}}>
+      <ImageDisplayControl>
+        <img src={imageUrl}
+             style={{width: "100%",
+             height: "100%"}} />
+      </ImageDisplayControl>
+    </div>
+  );
+}
+`.trim()}
+                      </code>
+                    </pre>
+                  </div>
                 </div>
               </section>
               <section>
