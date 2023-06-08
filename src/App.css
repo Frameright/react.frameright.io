@@ -2,7 +2,7 @@ div.app {
   width: 100vw;
   height: 100vh;
 
-  font-size: min(5vw, 5vh, 2em);
+  font-size: min(5vw, 4.5vh, 2em);
 }
 
 div.app,
