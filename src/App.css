@@ -2,7 +2,7 @@ div.app {
   width: 100vw;
   height: 100vh;
 
-  font-size: min(5vw, 4vh, 2em);
+  font-size: min(5vw, 5vh, 2em);
 }
 
 div.app,
@@ -12,15 +12,17 @@ div.app,
 
 span.topbar {
   position: fixed;
-  top: 0.3em;
-  right: 0.3em;
+  right: 0em;
   z-index: 10;
+  background-color: white;
+  border-bottom-left-radius: 0.3em;
 }
 
 img.logo {
   width: 2em;
   height: 2em;
   margin: 0.3em;
+  vertical-align: top;
 }
 
 div.flexContainer {
@@ -40,6 +42,10 @@ div[data-idc-parent] > img {
   max-width: 100%;
   max-height: 100%;
   margin: 0;
+}
+
+div.flexContainer {
+  height: min(calc(100% - 2em), 170vw);
 }
 
 div[data-idc-parent] {
@@ -82,5 +88,5 @@ div[data-idc-parent] {
 }
 
 div[data-idc-parent] {
-  max-height: max(35vh, 28vw);
+  max-height: max(28vh, 23vw);
 }

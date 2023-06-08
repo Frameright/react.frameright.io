@@ -26,6 +26,7 @@ export function App() {
       controlsBackArrows: 'faded',
       progress: true,
       mouseWheel: true,
+      touch: true,
       disableLayout: true,
       transition: 'slide',
     });
