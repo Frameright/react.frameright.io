@@ -22,7 +22,7 @@ export function App() {
     Reveal.initialize({
       plugins: [RevealHighlight],
       controlsLayout: 'edges',
-      controlsTutorial: false,
+      controlsTutorial: true,
       controlsBackArrows: 'faded',
       progress: true,
       mouseWheel: true,

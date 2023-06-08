@@ -75,6 +75,9 @@ div.appSlide {
 pre.code-wrapper {
   margin: 0;
   width: unset;
+
+  /* workaround for https://github.com/hakimel/reveal.js/issues/3423 */
+  pointer-events: none;
 }
 
 pre.code-wrapper > code {
