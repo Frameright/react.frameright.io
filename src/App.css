@@ -2,7 +2,7 @@ div.app {
   width: 100vw;
 
   /* Take into account browser bar on mobile */
-  height: calc(100vh - 60px);
+  height: calc(100vh - 3.3em);
 }
 
 /* strong portrait */
@@ -20,7 +20,7 @@ div.app {
 /* landscape */
 @media (min-aspect-ratio: 1) {
   div.app {
-    font-size: min(2.5vw, 4vh, 2.5em);
+    font-size: min(2.5vw, 4.8vh, 2.5em);
   }
 }
 
@@ -83,7 +83,11 @@ div.reveal {
 
 div.reveal,
 div.appSlide {
-  height: 19em;
+  height: 16em;
+}
+
+div.appSlideText {
+  margin-bottom: 0.5em;
 }
 
 div.appSlide {

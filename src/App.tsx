@@ -56,10 +56,10 @@ export function App() {
               <section>
                 <div className="appSlide">
                   <div>
-                    <p>
+                    <div className="appSlideText">
                       Simply leverage <b>Image Display Control</b> metadata in
                       React
-                    </p>
+                    </div>
                     <pre>
                       <code className="language-tsx">
                         {`
