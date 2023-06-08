@@ -75,8 +75,7 @@ export function MyApp() {
   // region:
   return (
     <ImageDisplayControl>
-      <img src={imageUrl}
-           width="300" height="200" />
+      <img src={imageUrl} />
     </ImageDisplayControl>
   );
 }
