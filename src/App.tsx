@@ -57,7 +57,8 @@ export function App() {
                 <div className="appSlide">
                   <div>
                     <p>
-                      Leverage <b>Image Display Control</b> metadata in React
+                      Simply leverage <b>Image Display Control</b> metadata in
+                      React
                     </p>
                     <pre>
                       <code className="language-tsx">
