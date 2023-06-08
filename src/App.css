@@ -45,7 +45,7 @@ div[data-idc-parent] > img {
 }
 
 div.flexContainer {
-  height: min(calc(100% - 2em), 170vw);
+  height: min(calc(100% - 3em), 170vw);
 }
 
 div[data-idc-parent] {
