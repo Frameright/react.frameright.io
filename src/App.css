@@ -1,6 +1,8 @@
 div.app {
   width: 100vw;
-  height: 100vh;
+
+  /* Take into account browser bar on mobile */
+  height: calc(100vh - 60px);
 }
 
 /* strong portrait */
@@ -18,7 +20,7 @@ div.app {
 /* landscape */
 @media (min-aspect-ratio: 1) {
   div.app {
-    font-size: min(2.5vw, 4.5vh, 2.5em);
+    font-size: min(2.5vw, 4vh, 2.5em);
   }
 }
 
@@ -63,7 +65,7 @@ div[data-idc-parent] > img {
 }
 
 div.flexContainer {
-  height: min(calc(100% - 3em), 170vw);
+  height: min(100%, 170vw);
 }
 
 div[data-idc-parent] {
