@@ -113,19 +113,15 @@ div.appSlide {
   justify-content: space-evenly;
 }
 
-pre.code-wrapper {
-  margin: 0;
-  width: unset;
+.reveal pre {
+  padding: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
 
-  /* workaround for https://github.com/hakimel/reveal.js/issues/3423 */
-  pointer-events: none;
+  /* 0.55 being the font-size set by reveal.js on pre */
+  border-radius: calc(var(--app-border-radius) / 0.55);
 }
 
-pre.code-wrapper > code {
-  max-height: unset;
-}
-
-pre.code-wrapper,
 div[data-idc-parent] {
   border-radius: var(--app-border-radius);
   overflow: hidden;

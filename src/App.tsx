@@ -4,13 +4,9 @@ import Reveal from 'reveal.js';
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/dist/theme/white.css';
 
-// Note: this requires noImplicitAny=false in tsconfig.json because of missing
-// type definitions:
-import RevealHighlight from 'reveal.js/plugin/highlight/highlight.js';
-
-import 'highlight.js/styles/a11y-dark.css';
-
 import { ImageDisplayControl } from '@frameright/react-image-display-control';
+
+import { CodeBlock } from './CodeBlock';
 
 import './App.css';
 
@@ -20,7 +16,6 @@ export function App() {
   React.useEffect(() => {
     if (revealInitialized) return;
     Reveal.initialize({
-      plugins: [RevealHighlight],
       controlsLayout: 'bottom-right',
       controlsTutorial: true,
       controlsBackArrows: 'faded',
@@ -60,9 +55,9 @@ export function App() {
                       Simply leverage <b>Image Display Control</b> metadata in
                       React
                     </div>
-                    <pre>
-                      <code className="language-tsx">
-                        {`
+                    <CodeBlock
+                      language="tsx"
+                      code={`
 // npm i @frameright/react-image-display-control
 import {ImageDisplayControl} from
   "@frameright/react-image-display-control";
@@ -80,8 +75,7 @@ export function MyApp() {
   );
 }
 `.trim()}
-                      </code>
-                    </pre>
+                    />
                   </div>
                 </div>
               </section>
@@ -91,25 +85,26 @@ export function MyApp() {
                     <div className="appSlideText">
                       Carelessly add size/ratio constraints
                     </div>
-                    <pre>
-                      <code className="language-tsx">
-                        {`
+                    <CodeBlock
+                      language="tsx"
+                      code={`
 export function MyApp() {
   // Will responsively zoom in on a meaningful
   // region:
   return (
-    <div style={{aspectRatio: 1 / 2}}>
+    <div style={{ aspectRatio: 1 / 2 }}>
+
       <ImageDisplayControl>
         <img src={imageUrl}
-             style={{width: "100%",
-             height: "100%"}} />
+             style={{ width:  "100%",
+                      height: "100%" }} />
       </ImageDisplayControl>
+
     </div>
   );
 }
 `.trim()}
-                      </code>
-                    </pre>
+                    />
                   </div>
                 </div>
               </section>
