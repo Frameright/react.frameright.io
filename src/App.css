@@ -36,8 +36,8 @@ span.topbar {
 }
 
 img.logo {
-  width: 2em;
-  height: 2em;
+  width: min(2em, 50px);
+  height: min(2em, 50px);
   margin: 0.3em;
   vertical-align: top;
 }
