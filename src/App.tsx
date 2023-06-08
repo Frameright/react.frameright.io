@@ -41,7 +41,7 @@ export function App() {
       if ('indexv' in event) {
         const newSlideNumber = (event.indexv as number) + 1;
         switch (newSlideNumber) {
-          case 1:
+          default:
             setIdcStyle(initialIdcStyle);
             setDebug('off');
             break;
@@ -276,6 +276,35 @@ return (
 );
 `.trim()}
                     />
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div className="appSlide">
+                  <div>
+                    <div className="appSlideText left">
+                      <a href="https://github.com/Frameright/react-image-display-control">
+                        React component's source code
+                      </a>
+                    </div>
+                    <div className="appSlideText left">
+                      <a href="https://github.com/Frameright/react.frameright.io">
+                        This demo's source code
+                      </a>
+                    </div>
+                    <div className="appSlideText left">
+                      <a href="https://frameright.app">frameright.app</a>
+                    </div>
+                    <div className="appSlideText left">
+                      <a href="https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#image-region">
+                        IPTC's open standard
+                      </a>
+                    </div>
+                    <div className="appSlideText left">
+                      <a href="https://github.com/Frameright/react-image-display-control/discussions">
+                        Ask us a question
+                      </a>
+                    </div>
                   </div>
                 </div>
               </section>
