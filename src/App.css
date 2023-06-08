@@ -1,22 +1,24 @@
 div.app {
   width: 100vw;
   height: 100vh;
-
-  /* slight portrait */
-  font-size: min(5vw, 2.5vh);
-}
-
-/* landscape */
-@media (min-aspect-ratio: 1) {
-  div.app {
-    font-size: min(2.5vw, 4.5vh);
-  }
 }
 
 /* strong portrait */
 @media (max-aspect-ratio: 1/2) {
   div.app {
     font-size: 5vw;
+  }
+}
+
+/* slight portrait */
+div.app {
+  font-size: min(5vw, 2.5vh);
+}
+
+/* landscape */
+@media (min-aspect-ratio: 1) {
+  div.app {
+    font-size: min(2.5vw, 4.5vh, 2.5em);
   }
 }
 
