@@ -85,16 +85,8 @@ div.flexContainer {
   height: min(100%, 170vw);
 }
 
-div[data-idc-parent] {
-  aspect-ratio: 1.5;
-}
-
-div.reveal,
-div[data-idc-parent] {
-  width: 18em;
-}
-
 div.reveal {
+  width: 18em;
   font-size: unset;
 }
 
@@ -120,6 +112,14 @@ div.appSlide {
 
   /* 0.55 being the font-size set by reveal.js on pre */
   border-radius: calc(var(--app-border-radius) / 0.55);
+}
+
+div.idcContainer {
+  width: 18em;
+  height: 12em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 div[data-idc-parent] {

@@ -13,8 +13,16 @@ import './App.css';
 let revealInitialized = false;
 
 export function App() {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const initialIdcStyle = {
+    width: '18em',
+    height: '12em',
+  };
+  const [idcStyle, setIdcStyle] = React.useState(initialIdcStyle);
+
   React.useEffect(() => {
     if (revealInitialized) return;
+
     Reveal.initialize({
       controlsLayout: 'bottom-right',
       controlsTutorial: true,
@@ -25,8 +33,25 @@ export function App() {
       disableLayout: true,
       transition: 'slide',
     });
+
+    Reveal.on('slidechanged', (event) => {
+      if ('indexv' in event) {
+        switch (event.indexv) {
+          case 1: // 2nd slide
+            setIdcStyle({
+              width: '6em',
+              height: '12em',
+            });
+            break;
+          default: // 1st slide
+            setIdcStyle(initialIdcStyle);
+            break;
+        }
+      }
+    });
+
     revealInitialized = true;
-  }, []);
+  }, [initialIdcStyle]);
 
   return (
     <div className="app">
@@ -116,13 +141,15 @@ export function MyApp() {
             </section>
           </div>
         </div>
-        <div data-idc-parent>
-          <ImageDisplayControl>
-            <img
-              src="https://webc.frameright.io/assets/pics/skater.jpg"
-              data-avoid-no-region="off"
-            />
-          </ImageDisplayControl>
+        <div className="idcContainer">
+          <div data-idc-parent style={idcStyle}>
+            <ImageDisplayControl>
+              <img
+                src="https://webc.frameright.io/assets/pics/skater.jpg"
+                data-avoid-no-region="off"
+              />
+            </ImageDisplayControl>
+          </div>
         </div>
       </div>
     </div>
