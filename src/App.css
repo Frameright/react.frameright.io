@@ -99,6 +99,10 @@ div.appSlideText {
   margin-bottom: 0.5em;
 }
 
+div.appSlideText.left {
+  text-align: left;
+}
+
 div.appSlide {
   display: flex;
   flex-direction: column;

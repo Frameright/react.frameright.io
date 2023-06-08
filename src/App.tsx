@@ -56,6 +56,14 @@ export function App() {
             setIdcStyle(initialIdcStyle);
             setDebug('on');
             break;
+
+          case 4:
+            setIdcStyle({
+              width: '18em',
+              height: '6em',
+            });
+            setDebug('off');
+            break;
         }
       }
     });
@@ -162,6 +170,23 @@ export function MyApp() {
 }
 `.trim()}
                     />
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div className="appSlide">
+                  <div>
+                    <div className="appSlideText left">
+                      <b>Image Display Control</b> regions in image metadata is
+                      an{' '}
+                      <a href="https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#image-region">
+                        open standard
+                      </a>
+                    </div>
+                    <div className="appSlideText left">
+                      Add regions to your own images for example with{' '}
+                      <a href="https://frameright.app">frameright.app</a>
+                    </div>
                   </div>
                 </div>
               </section>
