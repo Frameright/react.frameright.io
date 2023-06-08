@@ -125,4 +125,5 @@ div.idcContainer {
 div[data-idc-parent] {
   border-radius: var(--app-border-radius);
   overflow: hidden;
+  transition: all 0.5s ease;
 }
