@@ -2,7 +2,22 @@ div.app {
   width: 100vw;
   height: 100vh;
 
-  font-size: min(5vw, 4.5vh, 2em);
+  /* slight portrait */
+  font-size: min(5vw, 2.5vh);
+}
+
+/* landscape */
+@media (min-aspect-ratio: 1) {
+  div.app {
+    font-size: min(2.5vw, 4.5vh);
+  }
+}
+
+/* strong portrait */
+@media (max-aspect-ratio: 1/2) {
+  div.app {
+    font-size: 5vw;
+  }
 }
 
 div.app,
@@ -31,6 +46,7 @@ div.flexContainer {
   align-items: center;
   justify-content: space-evenly;
   column-gap: 1em;
+  padding: 1em;
 }
 
 div.flexContainer,
@@ -88,8 +104,4 @@ pre.code-wrapper,
 div[data-idc-parent] {
   border-radius: 0.3em;
   overflow: hidden;
-}
-
-div[data-idc-parent] {
-  max-height: max(28vh, 23vw);
 }

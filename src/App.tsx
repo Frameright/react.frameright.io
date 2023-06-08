@@ -21,7 +21,7 @@ export function App() {
     if (revealInitialized) return;
     Reveal.initialize({
       plugins: [RevealHighlight],
-      controlsLayout: 'edges',
+      controlsLayout: 'bottom-right',
       controlsTutorial: true,
       controlsBackArrows: 'faded',
       progress: true,
