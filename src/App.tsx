@@ -11,6 +11,7 @@ import { CodeBlock } from './CodeBlock';
 import './App.css';
 
 let revealInitialized = false;
+let stopAnimation = true;
 
 export function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,6 +37,7 @@ export function App() {
     });
 
     Reveal.on('slidechanged', (event) => {
+      stopAnimation = true;
       if ('indexv' in event) {
         const newSlideNumber = (event.indexv as number) + 1;
         switch (newSlideNumber) {
@@ -63,6 +65,65 @@ export function App() {
               height: '6em',
             });
             setDebug('off');
+            break;
+
+          case 5:
+            (async () => {
+              const firstStep = {
+                width: '18em',
+                height: '12em',
+                debug: 'off',
+              };
+              const steps = [
+                firstStep,
+                {
+                  width: '18em',
+                  height: '6em',
+                  debug: 'off',
+                },
+                {
+                  width: '6em',
+                  height: '6em',
+                  debug: 'off',
+                },
+                {
+                  width: '6em',
+                  height: '12em',
+                  debug: 'off',
+                },
+                {
+                  width: '18em',
+                  height: '12em',
+                  debug: 'on',
+                },
+                {
+                  width: '18em',
+                  height: '6em',
+                  debug: 'on',
+                },
+                {
+                  width: '6em',
+                  height: '6em',
+                  debug: 'on',
+                },
+                {
+                  width: '6em',
+                  height: '12em',
+                  debug: 'on',
+                },
+              ];
+              stopAnimation = false;
+              while (!stopAnimation) {
+                const nextStep = steps.shift() || firstStep;
+                steps.push(nextStep);
+                setIdcStyle({
+                  width: nextStep.width,
+                  height: nextStep.height,
+                });
+                setDebug(nextStep.debug);
+                await new Promise((resolve) => setTimeout(resolve, 1000));
+              }
+            })();
             break;
         }
       }
@@ -187,6 +248,34 @@ export function MyApp() {
                       Add regions to your own images for example with{' '}
                       <a href="https://frameright.app">frameright.app</a>
                     </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div className="appSlide">
+                  <div>
+                    <div className="appSlideText">Animate</div>
+                    <CodeBlock
+                      language="tsx"
+                      code={`
+const [idcStyle, setIdcStyle] = useState({
+  aspectRatio: 3 / 2,
+});
+
+useEffect(() => {
+  // ...
+  setIdcStyle({ aspectRatio: 1 / 2 });
+}, []);
+
+return (
+  <div style={idcStyle}>
+    <ImageDisplayControl>
+      <img src={imageUrl} />
+    </ImageDisplayControl>
+  </div>
+);
+`.trim()}
+                    />
                   </div>
                 </div>
               </section>
