@@ -1,8 +1,17 @@
+:root {
+  /* Take into account browser bar on mobile */
+  --app-viewport-height: calc(100vh - 60px);
+
+  --app-font-size-factor-on-square-screen: 2.5;
+
+  --app-border-radius: 0.3em;
+}
+
 div.app {
   width: 100vw;
 
   /* Take into account browser bar on mobile */
-  height: calc(100vh - 3.3em);
+  height: var(--app-viewport-height);
 }
 
 /* strong portrait */
@@ -14,13 +23,17 @@ div.app {
 
 /* slight portrait */
 div.app {
-  font-size: min(5vw, 2.5vh);
+  font-size: min(5vw, var(--app-font-size-factor-on-square-screen) * 1vh);
 }
 
 /* landscape */
 @media (min-aspect-ratio: 1) {
   div.app {
-    font-size: min(2.5vw, 4.8vh, 2.5em);
+    font-size: min(
+      var(--app-font-size-factor-on-square-screen) * 1vw,
+      0.048 * var(--app-viewport-height),
+      2.5em
+    );
   }
 }
 
@@ -31,26 +44,30 @@ div.app,
 
 span.topbar {
   position: fixed;
-  right: 0em;
+  right: 0;
   z-index: 10;
   background-color: white;
-  border-bottom-left-radius: 0.3em;
+  border-bottom-left-radius: var(--app-border-radius);
 }
 
 img.logo {
-  width: min(2em, 50px);
-  height: min(2em, 50px);
-  margin: 0.3em;
+  --app-logo-max-size: 50px;
+
+  width: min(2em, var(--app-logo-max-size));
+  height: min(2em, var(--app-logo-max-size));
+  margin: var(--app-border-radius);
   vertical-align: top;
 }
 
 div.flexContainer {
+  --app-flex-spacing: 1em;
   display: flex;
   flex-wrap: wrap-reverse;
   align-items: center;
   justify-content: space-evenly;
-  column-gap: 1em;
-  padding: 1em;
+
+  column-gap: var(--app-flex-spacing);
+  padding: var(--app-flex-spacing);
 }
 
 div.flexContainer,
@@ -110,6 +127,6 @@ pre.code-wrapper > code {
 
 pre.code-wrapper,
 div[data-idc-parent] {
-  border-radius: 0.3em;
+  border-radius: var(--app-border-radius);
   overflow: hidden;
 }
