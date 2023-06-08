@@ -19,6 +19,7 @@ export function App() {
     height: '12em',
   };
   const [idcStyle, setIdcStyle] = React.useState(initialIdcStyle);
+  const [debug, setDebug] = React.useState('off');
 
   React.useEffect(() => {
     if (revealInitialized) return;
@@ -36,15 +37,24 @@ export function App() {
 
     Reveal.on('slidechanged', (event) => {
       if ('indexv' in event) {
-        switch (event.indexv) {
-          case 1: // 2nd slide
+        const newSlideNumber = (event.indexv as number) + 1;
+        switch (newSlideNumber) {
+          case 1:
+            setIdcStyle(initialIdcStyle);
+            setDebug('off');
+            break;
+
+          case 2:
             setIdcStyle({
               width: '6em',
               height: '12em',
             });
+            setDebug('off');
             break;
-          default: // 1st slide
+
+          case 3:
             setIdcStyle(initialIdcStyle);
+            setDebug('on');
             break;
         }
       }
@@ -135,7 +145,24 @@ export function MyApp() {
               </section>
               <section>
                 <div className="appSlide">
-                  <p>3rd slide</p>
+                  <div>
+                    <div className="appSlideText">Easily inspect regions</div>
+                    <CodeBlock
+                      language="tsx"
+                      code={`
+export function MyApp() {
+  return (
+      <ImageDisplayControl>
+
+        <img src={imageUrl}
+             data-debug-draw-regions="on" />
+
+      </ImageDisplayControl>
+  );
+}
+`.trim()}
+                    />
+                  </div>
                 </div>
               </section>
             </section>
@@ -147,6 +174,7 @@ export function MyApp() {
               <img
                 src="https://webc.frameright.io/assets/pics/skater.jpg"
                 data-avoid-no-region="off"
+                data-debug-draw-regions={debug}
               />
             </ImageDisplayControl>
           </div>
