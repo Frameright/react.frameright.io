@@ -43,6 +43,7 @@ export function App() {
       transition: 'slide',
     });
 
+    // Tweak the Skater's style based on which slide we're on:
     Reveal.on('slidechanged', (event) => {
       stopAnimation = true;
       if ('indexv' in event) {
