@@ -70,7 +70,6 @@ export function App() {
             break;
 
           case 4:
-            setAvoidNoRegion('off');
             setIdcStyle({
               width: '18em',
               height: '6em',
