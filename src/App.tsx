@@ -10,12 +10,18 @@ import { CodeBlock } from './CodeBlock';
 
 import './App.css';
 
+interface IdcStyle {
+  width: string;
+  height: string;
+  borderRadius?: string;
+}
+
 let revealInitialized = false;
 let stopAnimation = true;
 
 export function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const initialIdcStyle = {
+  const initialIdcStyle: IdcStyle = {
     width: '18em',
     height: '12em',
   };
@@ -126,6 +132,16 @@ export function App() {
                 await new Promise((resolve) => setTimeout(resolve, 1000));
               }
             })();
+            break;
+
+          case 6:
+            setAvoidNoRegion('off');
+            setIdcStyle({
+              width: '12em',
+              height: '12em',
+              borderRadius: '50%',
+            });
+            setDebug('off');
             break;
         }
       }
