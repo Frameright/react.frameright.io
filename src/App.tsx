@@ -256,6 +256,10 @@ export function MyApp() {
                 <div className="appSlide">
                   <div>
                     <div className="appSlideText left">
+                      <img
+                        className="logo"
+                        src="https://iptc.org/wp-content/uploads/2019/03/iptc-logo.png"
+                      />
                       <b>Image Display Control</b> regions in image metadata are
                       an{' '}
                       <a href="https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#image-region">
@@ -263,6 +267,10 @@ export function MyApp() {
                       </a>
                     </div>
                     <div className="appSlideText left">
+                      <img
+                        className="logo"
+                        src="https://avatars.githubusercontent.com/u/35964478?s=200&v=4"
+                      />
                       Add regions to your own images for example at{' '}
                       <a href="https://frameright.app">
                         https://frameright.app
@@ -303,28 +311,60 @@ return (
                 <div className="appSlide">
                   <div>
                     <div className="appSlideText left">
+                      <img
+                        className="logo"
+                        src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png"
+                      />
                       <a href="https://github.com/Frameright/react-image-display-control">
-                        React component's source code
+                        React component's source code and documentation
                       </a>
                     </div>
                     <div className="appSlideText left">
+                      <img
+                        className="logo"
+                        src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png"
+                      />
+                      I don't use React:{' '}
+                      <a href="https://github.com/Frameright/image-display-control-web-component">
+                        Web component
+                      </a>
+                    </div>
+                    <div className="appSlideText left">
+                      <img
+                        className="logo"
+                        src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png"
+                      />
                       <a href="https://github.com/Frameright/react.frameright.io/blob/main/src/App.tsx">
                         This demo's source code
                       </a>
                     </div>
                     <div className="appSlideText left">
+                      <img
+                        className="logo"
+                        src="https://avatars.githubusercontent.com/u/35964478?s=200&v=4"
+                      />
+                      I want to add regions to my own images:{' '}
                       <a href="https://frameright.app">
                         https://frameright.app
                       </a>
                     </div>
                     <div className="appSlideText left">
+                      <img
+                        className="logo"
+                        src="https://iptc.org/wp-content/uploads/2019/03/iptc-logo.png"
+                      />
                       <a href="https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#image-region">
                         IPTC's open standard
                       </a>
                     </div>
                     <div className="appSlideText left">
+                      <img
+                        className="logo"
+                        src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png"
+                      />
+                      I have a question:{' '}
                       <a href="https://github.com/Frameright/react-image-display-control/discussions">
-                        Ask us a question
+                        GitHub Discussions
                       </a>
                     </div>
                   </div>

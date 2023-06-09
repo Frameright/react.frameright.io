@@ -50,7 +50,7 @@ span.topbar {
   border-bottom-left-radius: var(--app-border-radius);
 }
 
-img.logo {
+span.topbar img.logo {
   --app-logo-max-size: 50px;
 
   width: min(2em, var(--app-logo-max-size));
@@ -101,6 +101,18 @@ div.appSlideText {
 
 div.appSlideText.left {
   text-align: left;
+
+  /* pushing logo away to the left */
+  text-indent: -1.9em;
+  margin-left: 2em;
+}
+
+div.appSlideText img.logo {
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0;
+  margin-right: 0.7em;
+  vertical-align: top;
 }
 
 div.appSlide {
