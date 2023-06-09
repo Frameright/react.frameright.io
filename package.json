@@ -34,7 +34,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@frameright/react-image-display-control": "^0.0.1",
+    "@frameright/react-image-display-control": "^1.0.0",
     "prism-react-renderer": "^2.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
