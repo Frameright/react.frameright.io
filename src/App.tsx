@@ -20,6 +20,7 @@ export function App() {
     height: '12em',
   };
   const [idcStyle, setIdcStyle] = React.useState(initialIdcStyle);
+  const [avoidNoRegion, setAvoidNoRegion] = React.useState('off');
   const [debug, setDebug] = React.useState('off');
 
   React.useEffect(() => {
@@ -42,24 +43,28 @@ export function App() {
         const newSlideNumber = (event.indexv as number) + 1;
         switch (newSlideNumber) {
           default:
+            setAvoidNoRegion('off');
             setIdcStyle(initialIdcStyle);
             setDebug('off');
             break;
 
           case 2:
+            setAvoidNoRegion('off');
             setIdcStyle({
-              width: '6em',
+              width: '12em',
               height: '12em',
             });
             setDebug('off');
             break;
 
           case 3:
+            setAvoidNoRegion('off');
             setIdcStyle(initialIdcStyle);
             setDebug('on');
             break;
 
           case 4:
+            setAvoidNoRegion('off');
             setIdcStyle({
               width: '18em',
               height: '6em',
@@ -68,13 +73,20 @@ export function App() {
             break;
 
           case 5:
+            setAvoidNoRegion('on');
             (async () => {
               const firstStep = {
-                width: '18em',
-                height: '12em',
+                width: '6em',
+                height: '6em',
                 debug: 'off',
               };
               const steps = [
+                firstStep,
+                {
+                  width: '6em',
+                  height: '12em',
+                  debug: 'off',
+                },
                 firstStep,
                 {
                   width: '18em',
@@ -84,21 +96,11 @@ export function App() {
                 {
                   width: '6em',
                   height: '6em',
-                  debug: 'off',
+                  debug: 'on',
                 },
                 {
                   width: '6em',
                   height: '12em',
-                  debug: 'off',
-                },
-                {
-                  width: '18em',
-                  height: '12em',
-                  debug: 'on',
-                },
-                {
-                  width: '18em',
-                  height: '6em',
                   debug: 'on',
                 },
                 {
@@ -107,8 +109,8 @@ export function App() {
                   debug: 'on',
                 },
                 {
-                  width: '6em',
-                  height: '12em',
+                  width: '18em',
+                  height: '6em',
                   debug: 'on',
                 },
               ];
@@ -196,7 +198,7 @@ export function MyApp() {
   // Will responsively zoom in on a meaningful
   // region:
   return (
-    <div style={{ aspectRatio: 1 / 2 }}>
+    <div style={{ aspectRatio: 1 / 1 }}>
 
       <ImageDisplayControl>
         <img src={imageUrl}
@@ -259,7 +261,7 @@ export function MyApp() {
                       language="tsx"
                       code={`
 const [idcStyle, setIdcStyle] = useState({
-  aspectRatio: 3 / 2,
+  aspectRatio: 3 / 1,
 });
 
 useEffect(() => {
@@ -316,7 +318,7 @@ return (
             <ImageDisplayControl>
               <img
                 src="https://webc.frameright.io/assets/pics/skater.jpg"
-                data-avoid-no-region="off"
+                data-avoid-no-region={avoidNoRegion}
                 data-debug-draw-regions={debug}
               />
             </ImageDisplayControl>
