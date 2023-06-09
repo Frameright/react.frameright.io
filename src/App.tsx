@@ -239,12 +239,12 @@ export function MyApp() {
                       code={`
 export function MyApp() {
   return (
-      <ImageDisplayControl>
+    <ImageDisplayControl>
 
-        <img src={imageUrl}
-             data-debug-draw-regions="on" />
+      <img src={imageUrl}
+           data-debug-draw-regions="on" />
 
-      </ImageDisplayControl>
+    </ImageDisplayControl>
   );
 }
 `.trim()}
