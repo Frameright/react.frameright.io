@@ -240,15 +240,17 @@ export function MyApp() {
                 <div className="appSlide">
                   <div>
                     <div className="appSlideText left">
-                      <b>Image Display Control</b> regions in image metadata is
+                      <b>Image Display Control</b> regions in image metadata are
                       an{' '}
                       <a href="https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#image-region">
                         open standard
                       </a>
                     </div>
                     <div className="appSlideText left">
-                      Add regions to your own images for example with{' '}
-                      <a href="https://frameright.app">frameright.app</a>
+                      Add regions to your own images for example at{' '}
+                      <a href="https://frameright.app">
+                        https://frameright.app
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -290,12 +292,14 @@ return (
                       </a>
                     </div>
                     <div className="appSlideText left">
-                      <a href="https://github.com/Frameright/react.frameright.io">
+                      <a href="https://github.com/Frameright/react.frameright.io/blob/main/src/App.tsx">
                         This demo's source code
                       </a>
                     </div>
                     <div className="appSlideText left">
-                      <a href="https://frameright.app">frameright.app</a>
+                      <a href="https://frameright.app">
+                        https://frameright.app
+                      </a>
                     </div>
                     <div className="appSlideText left">
                       <a href="https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#image-region">
