@@ -15,3 +15,5 @@ You can also serve it locally with e.g.
 npm install
 npm run dev
 ```
+
+&emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
