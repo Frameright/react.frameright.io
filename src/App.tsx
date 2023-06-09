@@ -321,7 +321,10 @@ return (
           <div data-idc-parent style={idcStyle}>
             <ImageDisplayControl>
               <img
-                src="https://webc.frameright.io/assets/pics/skater.jpg"
+                src="/assets/pics/skater.jpg"
+                srcSet="/assets/pics/skater_highres.jpg  4000w,
+                        /assets/pics/skater.jpg          1500w"
+                sizes="(max-width: 4000px) 100vw, 1500px"
                 data-avoid-no-region={avoidNoRegion}
                 data-debug-draw-regions={debug}
               />
