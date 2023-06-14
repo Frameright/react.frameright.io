@@ -135,6 +135,7 @@ export function App() {
             break;
 
           case 6:
+          case 7:
             setAvoidNoRegion('off');
             setIdcStyle({
               width: '12em',
@@ -367,6 +368,19 @@ return (
                         GitHub Discussions
                       </a>
                     </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div className="appSlide">
+                  <div>
+                    <a href="https://react.frameright.io">
+                      <img
+                        className="qr"
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=1024x1024&data=https://react.frameright.io"
+                      />
+                      <div>react.frameright.io</div>
+                    </a>
                   </div>
                 </div>
               </section>

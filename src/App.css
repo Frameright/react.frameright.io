@@ -121,13 +121,22 @@ div.appSlide {
   justify-content: space-evenly;
 }
 
-.reveal pre {
-  padding: 1em;
+.reveal pre,
+.reveal img {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.reveal pre {
+  padding: 1em;
 
   /* 0.55 being the font-size set by reveal.js on pre */
   border-radius: calc(var(--app-border-radius) / 0.55);
+}
+
+img.qr {
+  width: 10em;
+  aspect-ratio: 1;
 }
 
 div.idcContainer {
