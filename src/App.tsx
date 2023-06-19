@@ -240,9 +240,7 @@ export function MyApp() {
     <div style={{ aspectRatio: 1 / 1 }}>
 
       <ImageDisplayControl>
-        <img src={imageUrl}
-             style={{ width:  "100%",
-                      height: "100%" }} />
+        <img src={imageUrl} />
       </ImageDisplayControl>
 
     </div>
@@ -309,17 +307,17 @@ export function MyApp() {
                     <CodeBlock
                       language="tsx"
                       code={`
-const [idcStyle, setIdcStyle] = useState({
+const [containerStyle, setStyle] = useState({
   aspectRatio: 3 / 1,
 });
 
 useEffect(() => {
   // ...
-  setIdcStyle({ aspectRatio: 1 / 2 });
+  setStyle({ aspectRatio: 1 / 2 });
 }, []);
 
 return (
-  <div style={idcStyle}>
+  <div style={containerStyle}>
     <ImageDisplayControl>
       <img src={imageUrl} />
     </ImageDisplayControl>
