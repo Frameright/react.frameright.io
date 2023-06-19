@@ -3,8 +3,9 @@
   --app-viewport-height: calc(100vh - 60px);
 
   --app-font-size-factor-on-square-screen: 2.5;
-
   --app-border-radius: 0.3em;
+  --app-color: #211d50;
+  --mailchimp-border-radius: 12px;
 }
 
 div.app {
@@ -39,7 +40,7 @@ div.app {
 
 div.app,
 .reveal {
-  color: #211d50;
+  color: var(--app-color);
 }
 
 span.topbar {
@@ -134,8 +135,51 @@ div.appSlide {
   border-radius: calc(var(--app-border-radius) / 0.55);
 }
 
+div.mailchimp {
+  margin-bottom: 1em;
+}
+
+div.mailchimp > h6 {
+  text-transform: none;
+  color: var(--app-color);
+
+  margin-bottom: 0.3em;
+}
+
+div.mailchimp > form {
+  display: inline-flex;
+  justify-content: space-between;
+
+  border: 2px solid var(--app-color);
+  border-radius: var(--mailchimp-border-radius);
+  padding: calc(var(--mailchimp-border-radius) / 2);
+
+  font-size: min(0.67em, var(--mailchimp-border-radius));
+  width: 25em;
+}
+
+div.mailchimp input {
+  border: 0;
+  outline: 0;
+}
+
+input#mce-EMAIL {
+  width: 100%;
+  color: var(--app-color);
+  margin-left: calc(var(--mailchimp-border-radius) / 2);
+  margin-right: calc(var(--mailchimp-border-radius) / 2);
+}
+
+input#mc-embedded-subscribe {
+  background-color: var(--app-color);
+  color: white;
+  border-radius: calc(var(--mailchimp-border-radius) / 2);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
 img.qr {
-  width: 10em;
+  width: 8em;
   aspect-ratio: 1;
 }
 

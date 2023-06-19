@@ -7,6 +7,7 @@ import 'reveal.js/dist/theme/white.css';
 import { ImageDisplayControl } from '@frameright/react-image-display-control';
 
 import { CodeBlock } from './CodeBlock';
+import { Mailchimp } from './Mailchimp';
 
 import './App.css';
 
@@ -394,6 +395,7 @@ return (
               <section>
                 <div className="appSlide">
                   <div>
+                    <Mailchimp />
                     <a href="https://react.frameright.io">
                       <img
                         className="qr"
