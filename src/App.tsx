@@ -27,7 +27,7 @@ export function App() {
   };
   const [idcStyle, setIdcStyle] = React.useState(initialIdcStyle);
   const [avoidNoRegion, setAvoidNoRegion] = React.useState('off');
-  const [debug, setDebug] = React.useState('off');
+  const [debug, setDebug] = React.useState('on');
 
   React.useEffect(() => {
     if (revealInitialized) return;
@@ -52,10 +52,16 @@ export function App() {
           default:
             setAvoidNoRegion('off');
             setIdcStyle(initialIdcStyle);
-            setDebug('off');
+            setDebug('on');
             break;
 
           case 2:
+            setAvoidNoRegion('off');
+            setIdcStyle(initialIdcStyle);
+            setDebug('off');
+            break;
+
+          case 3:
             setAvoidNoRegion('off');
             setIdcStyle({
               width: '12em',
@@ -64,13 +70,13 @@ export function App() {
             setDebug('off');
             break;
 
-          case 3:
+          case 4:
             setAvoidNoRegion('off');
             setIdcStyle(initialIdcStyle);
             setDebug('on');
             break;
 
-          case 4:
+          case 5:
             setIdcStyle({
               width: '18em',
               height: '6em',
@@ -78,7 +84,7 @@ export function App() {
             setDebug('off');
             break;
 
-          case 5:
+          case 6:
             setAvoidNoRegion('on');
             (async () => {
               const firstStep = {
@@ -134,8 +140,8 @@ export function App() {
             })();
             break;
 
-          case 6:
           case 7:
+          case 8:
             setAvoidNoRegion('off');
             setIdcStyle({
               width: '12em',
@@ -175,13 +181,29 @@ export function App() {
                 <div className="appSlide">
                   <div>
                     <div className="appSlideText">
-                      Simply leverage <b>Image Display Control</b> metadata in
-                      React
+                      It is possible to add cropping regions to the{' '}
+                      <b>metadata</b> of an image file.
                     </div>
+                    <div className="appSlideText">
+                      This demo showcases a <b>React</b> component that will
+                      automatically and responsively display the best fitting
+                      region based on the current element size and ratio.
+                    </div>
+                    <CodeBlock
+                      language="bash"
+                      code={`
+npm i @frameright/react-image-display-control
+`.trim()}
+                    />
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div className="appSlide">
+                  <div>
                     <CodeBlock
                       language="tsx"
                       code={`
-// npm i @frameright/react-image-display-control
 import {ImageDisplayControl} from
   "@frameright/react-image-display-control";
 
