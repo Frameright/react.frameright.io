@@ -409,7 +409,7 @@ return (
         </div>
         <div className="idcContainer">
           <div data-idc-parent style={idcStyle}>
-            <ImageDisplayControl data-debug>
+            <ImageDisplayControl>
               <img
                 src="/assets/pics/skater.jpg"
                 srcSet="/assets/pics/skater_highres.jpg  4000w,
