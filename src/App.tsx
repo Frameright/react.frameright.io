@@ -363,6 +363,16 @@ return (
                     <div className="appSlideText left">
                       <img
                         className="logo"
+                        src="https://avatars.githubusercontent.com/u/32880324?s=200&v=4"
+                      />
+                      Try it on{' '}
+                      <a href="https://codesandbox.io/s/image-display-control-react-component-m6qj9r">
+                        CodeSandbox
+                      </a>
+                    </div>
+                    <div className="appSlideText left">
+                      <img
+                        className="logo"
                         src="https://avatars.githubusercontent.com/u/35964478?s=200&v=4"
                       />
                       I want to add regions to my own images:{' '}

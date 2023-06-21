@@ -98,6 +98,7 @@ div.appSlide {
 
 div.appSlideText {
   margin-bottom: 0.5em;
+  font-size: 0.9em;
 }
 
 div.appSlideText.left {
@@ -111,6 +112,7 @@ div.appSlideText.left {
 div.appSlideText img.logo {
   width: 1.2em;
   height: 1.2em;
+  border-radius: 0.15em;
   margin: 0;
   margin-right: 0.7em;
   vertical-align: top;

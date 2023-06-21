@@ -17,3 +17,5 @@ npm run dev
 ```
 
 &emsp; :bulb: [GitHub Discussions](https://github.com/Frameright/react-image-display-control/discussions)
+
+&emsp; 💻 [CodeSandbox](https://codesandbox.io/s/image-display-control-react-component-m6qj9r)
