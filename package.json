@@ -19,6 +19,7 @@
     "reactjs"
   ],
   "license": "MIT",
+  "repository": "https://github.com/Frameright/react.frameright.io",
   "author": {
     "name": "Frameright (Coberg Ltd)",
     "email": "hello@frameright.io",
