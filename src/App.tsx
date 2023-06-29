@@ -338,17 +338,17 @@ return (
                         src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png"
                       />
                       <a href="https://github.com/Frameright/react-image-display-control">
-                        React component's source code and documentation
+                        React component's source code
                       </a>
                     </div>
                     <div className="appSlideText left">
                       <img
                         className="logo"
-                        src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png"
+                        src="https://avatars.githubusercontent.com/u/35964478?s=200&v=4"
                       />
                       I don't use React:{' '}
-                      <a href="https://github.com/Frameright/image-display-control-web-component">
-                        Web component
+                      <a href="https://docs.frameright.io/introduction">
+                        other components
                       </a>
                     </div>
                     <div className="appSlideText left">
