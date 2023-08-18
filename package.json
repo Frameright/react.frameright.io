@@ -42,13 +42,13 @@
     "reveal.js": "^4.5.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.19",
+    "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@types/reveal.js": "^4.4.2",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "@vitejs/plugin-react": "^4.0.4",
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.1.6",
