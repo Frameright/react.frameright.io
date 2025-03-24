@@ -39,20 +39,20 @@
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "reveal.js": "^5.1.0"
+    "reveal.js": "^5.2.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "@types/reveal.js": "^5.0.5",
-    "@typescript-eslint/eslint-plugin": "^8.26.0",
-    "@typescript-eslint/parser": "^8.26.0",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "typescript": "^5.8.2",
-    "vite": "^6.2.1"
+    "vite": "^6.2.2"
   },
   "prettier": {
     "printWidth": 80,
